@@ -10,3 +10,6 @@ use phpSPA\App;
    ->script(require 'scripts/GlobalScript.php')
    ->defaultTargetID('app')
    ->run();
+
+// --- NOT FOUND ---
+echo "<h2 style='padding: 20px;'>Page Not Found</h2>";
