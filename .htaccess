@@ -12,7 +12,3 @@
    # Send all other requests (including directories, non-existent files) to bootstrap
    RewriteRule ^(.*)$ src/index.php?uri=$1 [QSA,L]
 </IfModule>
-
-<IfModule mod_env.c>
-    SetEnv APP_ENV dev
-</IfModule>
