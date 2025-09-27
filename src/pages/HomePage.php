@@ -3,8 +3,8 @@
 use phpSPA\Component;
 
 require_once 'components/Footer.php';
-require_once 'components/HomeHeroSection.php';
 require_once 'components/HomePageComponents.php';
+require_once 'components/sections/HomeHeroSection.php';
 
 return (new Component(fn() => <<<HTML
    <HomeHeroSection />
@@ -12,5 +12,4 @@ return (new Component(fn() => <<<HTML
    <FooterComponent />
 HTML))
    ->route('/')
-   ->title('Pip Galaxy | Market Insights & Trading Strategies')
-   ->script(require 'scripts/HomeScript.php');
+   ->title('Pip Galaxy | Market Insights & Trading Strategies');

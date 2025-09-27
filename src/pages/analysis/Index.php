@@ -3,8 +3,8 @@
 use phpSPA\Component;
 
 require_once 'components/Footer.php';
-require_once 'components/AnalysisHeroSection.php';
 require_once 'components/NewsletterComponent.php';
+require_once 'components/sections/AnalysisHeroSection.php';
 require_once 'components/analysis/AnalysisIndexComponents.php';
 
 return (new Component(fn() => <<<HTML
@@ -15,5 +15,4 @@ return (new Component(fn() => <<<HTML
 HTML))
    ->route('/analysis')
    ->title('Market Analysis | Pip Galaxy')
-   ->script(require 'scripts/HomeScript.php')
-   ->styleSheet(require 'styles/AnalysisStyle.php');
+   ->styleSheet(require 'assets/styles/AnalysisStyle.php');

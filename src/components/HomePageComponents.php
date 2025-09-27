@@ -7,10 +7,10 @@ class HomePageComponents
    public function __render()
    {
       return <<<HTML
-         {$this->MarketOverview()}
-         {$this->StatisticSection()}
-         {$this->LatestArticles()}
-         {$this->FeaturedTools()}
+         <HomePageComponents::MarketOverview />
+         <HomePageComponents::StatisticSection />
+         <HomePageComponents::LatestArticles />
+         <HomePageComponents::FeaturedTools />
          <NewsletterComponent />
       HTML;
    }

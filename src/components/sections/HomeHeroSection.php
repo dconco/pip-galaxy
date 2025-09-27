@@ -1,6 +1,6 @@
 <?php
 
-require_once 'HomeHeader.php';
+require_once 'components/Header.php';
 
 class HomeHeroSection
 {
@@ -10,7 +10,7 @@ class HomeHeroSection
          <!-- Hero Section with Integrated Header -->
          <section class="hero-gradient text-white min-h-screen relative overflow-hidden">
             <div class="absolute inset-0 bg-black opacity-10"></div>
-            <HomeHeader />
+            <Header />
 
             <!-- Hero Content -->
             <div class="container mx-auto px-4 text-center relative z-10 pt-48 md:pt-60 pb-20">

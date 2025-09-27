@@ -9,7 +9,7 @@ class AnalysisIndexComponents
          <section class="py-12">
             <div class="container mx-auto px-4">
                <div class="flex flex-col lg:flex-row gap-8">
-                  {$this->SidebarFilter()}
+                  <AnalysisIndexComponents::SidebarFilter />
 
                   <!-- Article List -->
                   <div class="lg:w-3/4">
@@ -47,7 +47,7 @@ class AnalysisIndexComponents
                      <!-- Article Grid -->
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Article 1 -->
-                        <ArticleCard image="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        <AnalysisIndexComponents::ArticleCard image="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                                      category="Commodities"
                                      title="Gold Price Analysis: XAU/USD Eyes Key Support at $1,850"
                                      excerpt="Gold prices test critical support levels amid a stronger dollar and rising bond yields - we analyze potential scenarios ahead."
@@ -56,7 +56,7 @@ class AnalysisIndexComponents
                                      timeAgo="5 hours ago" />
 
                         <!-- Article 2 -->
-                        <ArticleCard image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        <AnalysisIndexComponents::ArticleCard image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                                      category="Crypto"
                                      title="Bitcoin Technical Analysis: BTC/USD Eyes $30,000 Support"
                                      excerpt="Bitcoin consolidates near $31,000 as traders await key economic data - we break down the technicals and potential catalysts."
@@ -65,7 +65,7 @@ class AnalysisIndexComponents
                                      timeAgo="8 hours ago" />
 
                         <!-- Article 3 -->
-                        <ArticleCard image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        <AnalysisIndexComponents::ArticleCard image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                                      category="Forex"
                                      title="EUR/USD Technical Analysis: Euro Struggles Below 1.1000"
                                      excerpt="The EUR/USD pair faces resistance near 1.1000 as the dollar strengthens ahead of the FOMC meeting - we analyze key levels to watch."
@@ -74,7 +74,7 @@ class AnalysisIndexComponents
                                      timeAgo="1 day ago" />
 
                         <!-- Article 4 -->
-                        <ArticleCard image="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        <AnalysisIndexComponents::ArticleCard image="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                                      category="Trading Psychology"
                                      title="Mastering Trading Psychology: Tips for Staying Disciplined"
                                      excerpt="Successful trading requires more than just strategy - we explore key psychological principles to help you stay disciplined and focused."
@@ -83,7 +83,7 @@ class AnalysisIndexComponents
                                      timeAgo="2 days ago" />
                      </div>
 
-                     {$this->renderPagination()}
+                     <AnalysisIndexComponents::Pagination />
                   </div>
                </div>
             </div>
@@ -93,7 +93,7 @@ class AnalysisIndexComponents
 
 
 
-   private function SidebarFilter()
+   public function SidebarFilter()
    {
       return <<<HTML
          <!-- Sidebar Filters -->
@@ -179,7 +179,7 @@ class AnalysisIndexComponents
 
 
 
-   private function renderPagination()
+   public function Pagination()
    {
       return <<<HTML
          <!-- Pagination -->
@@ -197,30 +197,31 @@ class AnalysisIndexComponents
          </div>
       HTML;
    }
-}
+   
 
 
-
-function ArticleCard($image, $category, $title, $excerpt, $author, $views, $timeAgo)
-{
-   return <<<HTML
-      <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-         <img src="{$image}" alt="Gold Analysis" class="w-full h-48 object-cover">
-         <div class="p-6">
-            <div class="flex items-center mb-2">
-                  <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">{$category}</span>
-                  <span class="text-gray-500 text-sm ml-auto">{$timeAgo}</span>
+   public function ArticleCard($image, $category, $title, $excerpt, $author, $views, $timeAgo)
+   {
+      return <<<HTML
+         <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+            <img src="{$image}" alt="Gold Analysis" class="w-full h-48 object-cover">
+            <div class="p-6">
+               <div class="flex items-center mb-2">
+                     <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">{$category}</span>
+                     <span class="text-gray-500 text-sm ml-auto">{$timeAgo}</span>
+               </div>
+               <h3 class="font-bold text-xl mb-2">{$title}</h3>
+               <p class="text-gray-600 mb-4">{$excerpt}</p>
+               <div class="flex items-center justify-between">
+                     <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm font-medium">{$author}</span>
+                     </div>
+                     <span class="text-xs text-gray-500"><i class="fas fa-eye mr-1"></i> {$views}</span>
+               </div>
             </div>
-            <h3 class="font-bold text-xl mb-2">{$title}</h3>
-            <p class="text-gray-600 mb-4">{$excerpt}</p>
-            <div class="flex items-center justify-between">
-                  <div class="flex items-center">
-                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="w-6 h-6 rounded-full mr-2">
-                     <span class="text-sm font-medium">{$author}</span>
-                  </div>
-                  <span class="text-xs text-gray-500"><i class="fas fa-eye mr-1"></i> {$views}</span>
-            </div>
-         </div>
-      </article>
-   HTML;
+         </article>
+      HTML;
+   }
+
 }

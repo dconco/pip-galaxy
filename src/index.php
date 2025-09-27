@@ -9,7 +9,8 @@ use phpSPA\App;
    ->attach(require 'pages/NewsPage.php')
    ->attach(require 'pages/analysis/Index.php')
 
-   ->script(require 'scripts/GlobalScript.php')
+   ->script(require 'assets/scripts/GlobalScript.php')
+   ->styleSheet(require 'assets/styles/MainStyle.php')
    ->defaultTargetID('app')
    ->run();
 

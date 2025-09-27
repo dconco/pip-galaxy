@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles for PHP project */
+/* Custom styles */
 body {
     font-family: 'Inter', sans-serif;
 }
 
 .logo-font {
     font-family: 'Space Grotesk', sans-serif;
+}
+
+.mobile-menu {
+    transition: all 0.3s ease;
 }
 
 .hero-gradient {
@@ -52,10 +56,39 @@ body {
     }
 }
 
+.market-stats {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
 .stats-gradient {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
-.market-stats {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+.news-ticker {
+    animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.breaking-news {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #fef2f2;
+    }
+    50% {
+        background-color: #fee2e2;
+    }
+    100% {
+        background-color: #fef2f2;
+    }
 }

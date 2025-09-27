@@ -12,6 +12,19 @@ return fn() => <<<HTML
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    </head>
    <body>
+      <!-- Page Loading Overlay -->
+      <div class="page-loading-overlay" id="page-loading-overlay"></div>
+
+      <!-- Page Loading Bar -->
+      <div class="page-loading" id="page-loading-bar"></div>
+
+      <!-- Alternative Loading Dots -->
+      <div class="page-loading-dots" id="page-loading-dots">
+         <div class="loading-dot"></div>
+         <div class="loading-dot"></div>
+         <div class="loading-dot"></div>
+      </div>
+
       <div id="app"></div>
 
       <script src="https://unpkg.com/phpspa-js"></script>
