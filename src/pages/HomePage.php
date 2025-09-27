@@ -12,5 +12,5 @@ return (new Component(fn() => <<<HTML
    <FooterComponent />
 HTML))
    ->route('/')
-   ->title('Pip Galaxy - Market Insights & Trading Strategies')
+   ->title('Pip Galaxy | Market Insights & Trading Strategies')
    ->script(require 'scripts/HomeScript.php');

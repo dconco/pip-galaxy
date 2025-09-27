@@ -7,6 +7,7 @@ use phpSPA\App;
 (new App(require 'layout/Layout.php'))
    ->attach(require 'pages/HomePage.php')
    ->attach(require 'pages/NewsPage.php')
+   ->attach(require 'pages/analysis/Index.php')
 
    ->script(require 'scripts/GlobalScript.php')
    ->defaultTargetID('app')

@@ -2,7 +2,7 @@
 
 class HomeHeader
 {
-   public function __render()
+   public function __render($active = 'home')
    {
       return <<<HTML
          <!-- Floating Header/Navbar -->

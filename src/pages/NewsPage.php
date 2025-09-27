@@ -11,5 +11,5 @@ return (new Component(fn() => <<<HTML
    <NewsPageComponents />
    <FooterComponent />
 HTML))
-   ->title('Market News - PIP Galaxy')
+   ->title('Market News | PIP Galaxy')
    ->route('/news');
