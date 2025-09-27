@@ -6,6 +6,7 @@ class LearnIndexComponents
       return <<<HTML
          <LearnIndexComponents::LearningPaths />
          <LearnIndexComponents::QuickAccessToolsSection />
+         <LearnIndexComponents::LearningStatistics />
       HTML;
    }
 
@@ -14,7 +15,6 @@ class LearnIndexComponents
    
    public function LearningPaths() {
       return <<<HTML
-         <Component.Link></Component.Link>
 
          <!-- Learning Paths Section -->
          <section class="py-16 bg-gradient-to-b from-gray-50 to-white">

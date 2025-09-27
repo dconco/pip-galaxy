@@ -12,7 +12,7 @@ class FooterComponent
             <div class="container mx-auto px-4">
                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                   <div>
-                     <Component.Link to="/" class="flex items-center space-x-4 mb-6">
+                     <Component.Link to="/" class="flex items-center space-x-4 mb-6 decoration-transparent">
                         <img src="/images/icon.png" alt="Pip Galaxy Logo" class="h-24 w-24">
                         <span class="logo-font text-3xl font-bold">Pip Galaxy</span>
                      </Component.Link>

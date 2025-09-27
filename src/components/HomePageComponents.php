@@ -11,7 +11,6 @@ class HomePageComponents
          <HomePageComponents::StatisticSection />
          <HomePageComponents::LatestArticles />
          <HomePageComponents::FeaturedTools />
-         <NewsletterComponent />
       HTML;
    }
 
