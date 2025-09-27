@@ -5,7 +5,8 @@ use phpSPA\App;
 (new App(require 'layout/Layout.php'))
    ->attach(require 'pages/HomePage.php')
    ->attach(require 'pages/NewsPage.php')
-   ->attach(require 'pages/analysis/Index.php')
+   ->attach(require 'pages/learn/LearnPage.php')
+   ->attach(require 'pages/analysis/AnalysisPage.php')
 
    ->script(require 'assets/scripts/GlobalScript.php')
    ->styleSheet(require 'assets/styles/MainStyle.php')

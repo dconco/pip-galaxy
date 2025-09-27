@@ -5,8 +5,8 @@ class HeaderComponent
    public function __render($active = 'home')
    {
       $active = fn($page) => $page === $active
-         ? 'text-indigo-600 bg-indigo-50 px-4 py-2 rounded-lg font-medium'
-         : 'hover:text-indigo-600 hover:bg-indigo-50 px-4 py-2 rounded-lg font-medium transition-all duration-300';
+         ? 'text-indigo-600 bg-indigo-50 px-4 rounded-lg font-medium'
+         : 'hover:text-indigo-600 hover:bg-indigo-50 px-4 rounded-lg font-medium transition-all duration-300';
 
       return <<<HTML
          <!-- Modern Header integrated with content -->
@@ -18,11 +18,11 @@ class HeaderComponent
                </Component.Link>
 
                <div class="hidden md:flex space-x-8">
-                  <Component.Link to="/" children="Home" class="{$active('home')}" />
-                  <Component.Link to="/analysis" children="Analysis" class="{$active('analysis')}" />
-                  <Component.Link to="/news" children="News" class="{$active('news')}" />
-                  <Component.Link to="/learn/forex" children="Learn" class="{$active('learn/forex')}" />
-                  <Component.Link to="/tools" children="Tools" class="{$active('tools')}" />
+                  <Component.Link to="/" children="Home" class="{$active('home')} py-2" />
+                  <Component.Link to="/analysis" children="Analysis" class="{$active('analysis')} py-2" />
+                  <Component.Link to="/news" children="News" class="{$active('news')} py-2" />
+                  <Component.Link to="/learn" children="Learn" class="{$active('learn')} py-2" />
+                  <Component.Link to="/tools" children="Tools" class="{$active('tools')} py-2" />
                </div>
 
                <div class="flex items-center space-x-4">
@@ -36,11 +36,11 @@ class HeaderComponent
             <!-- Mobile Menu -->
             <div class="mobile-menu hidden md:hidden bg-white bg-opacity-95 backdrop-blur-md border-t" id="mobileMenu">
                <div class="container mx-auto px-4 py-6 flex flex-col space-y-4">
-                  <Component.Link to="/" children="Home" class="hover:text-indigo-600 hover:bg-indigo-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" />
-                  <Component.Link to="/analysis" children="Analysis" class="hover:text-indigo-600 hover:bg-indigo-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" />
-                  <Component.Link to="/news" children="News" class="text-indigo-600 bg-indigo-50 px-4 py-3 rounded-lg font-medium" />
-                  <Component.Link to="/learn/forex" children="Learn" class="hover:text-indigo-600 hover:bg-indigo-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" />
-                  <Component.Link to="/tools" children="Tools" class="hover:text-indigo-600 hover:bg-indigo-50 px-4 py-3 rounded-lg font-medium transition-all duration-300" />
+                  <Component.Link to="/" children="Home" class="{$active('home')} py-3" />
+                  <Component.Link to="/analysis" children="Analysis" class="{$active('analysis')} py-3" />
+                  <Component.Link to="/news" children="News" class="{$active('news')} py-3" />
+                  <Component.Link to="/learn" children="Learn" class="{$active('learn')} py-3" />
+                  <Component.Link to="/tools" children="Tools" class="{$active('tools')} py-3" />
                   <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300 mt-2">Sign In</button>
                </div>
             </div>

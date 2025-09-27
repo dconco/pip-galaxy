@@ -1,10 +1,10 @@
 <?php
 
 require_once 'components/Header.php';
+require_once 'components/AnimatedBackground.php';
 
-class HomeHeroSection
-{
-   public function __render()
+class HomeHeroSection {
+   public function __render ()
    {
       return <<<HTML
          <!-- Hero Section with Integrated Header -->
@@ -70,13 +70,8 @@ class HomeHeroSection
                </div>
             </div>
 
-            <!-- Animated Background Elements -->
-            <div class="absolute top-20 left-10 text-white opacity-10 text-6xl pulse-animation">
-               <i class="fas fa-chart-line"></i>
-            </div>
-            <div class="absolute bottom-20 right-10 text-white opacity-10 text-4xl pulse-animation" style="animation-delay: 1s;">
-               <i class="fab fa-bitcoin"></i>
-            </div>
+            <AnimatedBackground />
+            <AnimatedBackground::Home />
          </section>
       HTML;
    }
