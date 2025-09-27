@@ -1,16 +1,12 @@
 {
-  "name": "pip-galaxy",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "phpspa",
+  "description": "PhpSPA Project Template",
   "scripts": {
-    "dev": "tailwindcss -i ./src/assets/css/input.css -o ./public/css/output.css --watch",
-    "build": "tailwindcss -i ./src/assets/css/input.css -o ./public/css/output.css --minify"
+    "dev": "tailwindcss -i ./src/assets/style.css -o ./public/dist/tailwind.css --watch",
+    "build": "tailwindcss -i ./src/assets/style.css -o ./public/dist/tailwind.css --minify"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.15.1",
+  "author": "dconco",
+  "license": "MIT",
   "devDependencies": {
     "@tailwindcss/typography": "0.5.10",
     "autoprefixer": "10.4.17",

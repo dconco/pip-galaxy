@@ -1,12 +1,20 @@
-RewriteEngine On
+<IfModule mod_rewrite.c>
+   RewriteEngine On
 
-# If file doesn't exist in public, redirect back to main app
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^(.*)$ ../src/index.php?uri=$1 [QSA,L]
+   # Accept Authorization Header
+   RewriteCond %{HTTP:Authorization} ^(.+)$
+   RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-# Serve correct MIME type for Web App Manifest
-AddType application/manifest+json .webmanifest
+   # Check if requested file exists and serve it
+   RewriteCond %{REQUEST_FILENAME} -f
+   RewriteRule ^(.*)$ $1 [L]
+
+   # Send all other requests (including directories, non-existent files) to bootstrap
+   RewriteRule ^(.*)$ index.php?uri=$1 [QSA,L]
+
+   # Serve correct MIME type for Web App Manifest
+   AddType application/manifest+json .webmanifest
+</IfModule>
 
 # Enable compression for better performance
 <IfModule mod_deflate.c>

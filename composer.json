@@ -3,7 +3,7 @@
    "name": "phpspa/phpspa",
    "description": "PhpSPA Project Template",
    "homepage": "https://github.com/dconco/phpspa-template",
-   "keywords": [ "phpspa", "php" ],
+   "keywords": [ "phpspa", "php", "framework" ],
    "license": "MIT",
    "authors": [
       {
@@ -19,7 +19,9 @@
    "scripts": {
       "start": "php -S localhost:8000 -t src",
       "post-create-project-cmd": [
-         "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+         "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+         "npm install",
+         "npm run build"
       ]
    },
    "minimum-stability": "stable",
