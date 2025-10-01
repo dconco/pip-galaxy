@@ -17,7 +17,7 @@
       "vlucas/phpdotenv": "^5.6"
    },
    "scripts": {
-      "start": "php -S localhost:8000 -t src",
+      "start": "php -S localhost:8000 -t public",
       "post-create-project-cmd": [
          "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
          "npm install",

@@ -24,11 +24,56 @@ class NewsPageComponents
             <div class="container mx-auto px-4">
                <div class="flex items-center">
                   <span class="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-3">BREAKING</span>
-                  <a href="#" class="font-medium text-gray-900 hover:text-red-700">Fed Chair Powell signals more rate hikes may be needed to curb inflation</a>
+                  <Component.Link class="font-medium text-gray-900 hover:text-red-700">Fed Chair Powell signals more rate hikes may be needed to curb inflation</Component.Link>
                   <span class="text-gray-500 text-sm ml-auto">2 mins ago</span>
                </div>
             </div>
          </div>
+      HTML;
+   }
+
+
+
+
+   public function FeaturedNews($category, $title, $summary, $imageUrl, $timeAgo, $author, $authorImage, $link) {
+      return <<<HTML
+         <article class="mb-10 bg-white rounded-lg overflow-hidden shadow-md">
+            <img src="{$imageUrl}" alt="{$title}" class="w-full h-64 md:h-80 object-cover">
+            <div class="p-6">
+               <div class="flex items-center mb-3">
+                  <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">{$category}</span>
+                  <span class="text-gray-500 text-sm ml-auto">{$timeAgo}</span>
+               </div>
+               <h2 class="font-bold text-2xl md:text-3xl mb-3">{$title}</h2>
+               <p class="text-gray-600 mb-4 text-lg">{$summary}</p>
+               <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                     <img src="{$authorImage}" alt="Author" class="w-8 h-8 rounded-full mr-2">
+                     <span class="text-sm font-medium">By {$author}</span>
+                  </div>
+                  <Component.Link to="{$link}" class="text-indigo-600 font-medium hover:underline">Read Full Story →</Component.Link>
+               </div>
+            </div>
+         </article>
+      HTML;
+   }
+
+
+
+   public function NewsCard($category, $title, $summary, $imageUrl, $timeAgo, $link) {
+      return <<<HTML
+         <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+            <img src="{$imageUrl}" alt="{$title}" class="w-full h-48 object-cover">
+            <div class="p-6">
+               <div class="flex items-center mb-2">
+                  <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">{$category}</span>
+                  <span class="text-gray-500 text-sm ml-auto">{$timeAgo}</span>
+               </div>
+               <h3 class="font-bold text-xl mb-2">{$title}</h3>
+               <p class="text-gray-600 mb-4">{$summary}</p>
+               <Component.Link to="{$link}" class="text-indigo-600 font-medium hover:underline">Read More →</Component.Link>
+            </div>
+         </article>
       HTML;
    }
 
@@ -45,82 +90,53 @@ class NewsPageComponents
                   <!-- Main News Column -->
                   <div class="lg:w-2/3">
                      <!-- Featured News -->
-                     <article class="mb-10 bg-white rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Fed Meeting" class="w-full h-64 md:h-80 object-cover">
-                        <div class="p-6">
-                           <div class="flex items-center mb-3">
-                              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Economy</span>
-                              <span class="text-gray-500 text-sm ml-auto">1 hour ago</span>
-                           </div>
-                           <h2 class="font-bold text-2xl md:text-3xl mb-3">Fed Pauses Rate Hikes But Signals Two More Increases This Year</h2>
-                           <p class="text-gray-600 mb-4 text-lg">The Federal Reserve held interest rates steady but surprised markets with a more hawkish outlook, projecting additional rate hikes in 2023 to combat persistent inflation.</p>
-                           <div class="flex items-center justify-between">
-                              <div class="flex items-center">
-                                 <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Author" class="w-8 h-8 rounded-full mr-2">
-                                 <span class="text-sm font-medium">By Maria</span>
-                              </div>
-                              <a href="#" class="text-indigo-600 font-medium hover:underline">Read Full Story →</a>
-                           </div>
-                        </div>
-                     </article>
+                     <NewsPageComponents::FeaturedNews
+                        category="Economy" 
+                        title="Fed Pauses Rate Hikes But Signals Two More Increases This Year" 
+                        summary="The Federal Reserve held interest rates steady but surprised markets with a more hawkish outlook, projecting additional rate hikes in 2023 to combat persistent inflation." 
+                        imageUrl="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                        timeAgo="1 hour ago" 
+                        author="Maria" 
+                        link="/article/view/1234"
+                        authorImage="https://randomuser.me/api/portraits/women/28.jpg" />
 
                      <!-- News Grid -->
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <!-- News 1 -->
-                        <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                           <img src="https://images.unsplash.com/photo-1622630998477-942890a5f3df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bitcoin News" class="w-full h-48 object-cover">
-                           <div class="p-6">
-                              <div class="flex items-center mb-2">
-                                 <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Crypto</span>
-                                 <span class="text-gray-500 text-sm ml-auto">3 hours ago</span>
-                              </div>
-                              <h3 class="font-bold text-xl mb-2">Bitcoin Drops Below $29K as SEC Delays Decisions on Several ETF Applications</h3>
-                              <p class="text-gray-600 mb-4">The SEC pushed back its deadlines for decisions on Bitcoin ETF proposals from BlackRock, Fidelity, and other asset managers.</p>
-                              <a href="/analysis/category/crypto.html" class="text-indigo-600 font-medium hover:underline">Read More →</a>
-                           </div>
-                        </article>
+                        <NewsPageComponents::NewsCard 
+                           category="Crypto" 
+                           title="Bitcoin Drops Below $29K as SEC Delays Decisions on Several ETF Applications" 
+                           summary="The SEC pushed back its deadlines for decisions on Bitcoin ETF proposals from BlackRock, Fidelity, and other asset managers." 
+                           imageUrl="https://images.unsplash.com/photo-1622630998477-942890a5f3df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                           timeAgo="3 hours ago" 
+                           link="/article/view/1" />
 
                         <!-- News 2 -->
-                        <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                           <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gold News" class="w-full h-48 object-cover">
-                           <div class="p-6">
-                              <div class="flex items-center mb-2">
-                                 <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Commodities</span>
-                                 <span class="text-gray-500 text-sm ml-auto">5 hours ago</span>
-                              </div>
-                              <h3 class="font-bold text-xl mb-2">Gold Rebounds From 3-Month Low as Dollar Weakens After Fed Decision</h3>
-                              <p class="text-gray-600 mb-4">Gold prices recovered as the US dollar index fell following the Fed's rate decision, with XAU/USD climbing back above $1950.</p>
-                              <a href="#" class="text-indigo-600 font-medium hover:underline">Read More →</a>
-                           </div>
-                        </article>
+                        <NewsPageComponents::NewsCard 
+                           category="Commodities" 
+                           title="Gold Prices Rally Amid Banking Sector Turmoil and Economic Uncertainty" 
+                           summary="Gold prices surged as investors sought safe-haven assets following recent banking sector instability and concerns over economic growth." 
+                           imageUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                           timeAgo="5 hours ago" 
+                           link="/article/view/2" />
 
                         <!-- News 3 -->
-                        <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                           <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Forex News" class="w-full h-48 object-cover">
-                           <div class="p-6">
-                              <div class="flex items-center mb-2">
-                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Forex</span>
-                                 <span class="text-gray-500 text-sm ml-auto">7 hours ago</span>
-                              </div>
-                              <h3 class="font-bold text-xl mb-2">EUR/USD Volatility Expected as ECB Prepares for Potential Rate Hike Next Week</h3>
-                              <p class="text-gray-600 mb-4">The euro gained ground against the dollar as markets price in a 25 basis point ECB rate hike at next week's meeting.</p>
-                              <a href="#" class="text-indigo-600 font-medium hover:underline">Read More →</a>
-                           </div>
-                        </article>
+                        <NewsPageComponents::NewsCard 
+                           category="Forex" 
+                           title="USD/JPY Hits 24-Year High as BOJ Sticks to Ultra-Easy Monetary Policy" 
+                           summary="The Japanese yen weakened to its lowest level in over two decades against the US dollar after the Bank of Japan maintained its ultra-loose monetary policy." 
+                           imageUrl="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                           timeAgo="7 hours ago" 
+                           link="/article/view/3" />
 
                         <!-- News 4 -->
-                        <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Stocks News" class="w-full h-48 object-cover">
-                           <div class="p-6">
-                              <div class="flex items-center mb-2">
-                                 <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Stocks</span>
-                                 <span class="text-gray-500 text-sm ml-auto">9 hours ago</span>
-                              </div>
-                              <h3 class="font-bold text-xl mb-2">S&P 500 Futures Drop After Fed's Hawkish Surprise</h3>
-                              <p class="text-gray-600 mb-4">US stock futures declined as investors digested the Fed's projection of higher rates for longer, with tech shares leading losses.</p>
-                              <a href="#" class="text-indigo-600 font-medium hover:underline">Read More →</a>
-                           </div>
-                        </article>
+                        <NewsPageComponents::NewsCard 
+                           category="Stocks" 
+                           title="Tech Stocks Lead Market Rally as Investors Eye AI and Cloud Computing Growth" 
+                           summary="Technology stocks surged, driving a broader market rally, as investors focused on growth opportunities in artificial intelligence and cloud computing sectors." 
+                           imageUrl="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                           timeAgo="9 hours ago" 
+                           link="/article/view/4" />
                      </div>
 
                      <!-- Load More Button -->

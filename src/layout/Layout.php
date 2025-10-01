@@ -27,7 +27,8 @@ return fn() => <<<HTML
 
       <div id="app"></div>
 
-      <script src="https://unpkg.com/phpspa-js"></script>
+      <!-- <script src="https://unpkg.com/phpspa-js"></script> -->
+      <script src="/assets/phpspa-1.1.10.js"></script>
    </body>
    </html>
 HTML;

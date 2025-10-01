@@ -6,10 +6,6 @@ return fn() => <<<JS
       $('#mobileMenu, #headerMobileMenu').slideToggle();
    });
 
-   $('#page-loading-overlay').hide();
-   $('#page-loading-bar').hide();
-   $('#page-loading-dots').hide();
-
    /* Show Loading Page on Navigation */
    phpspa.on('beforeload', () => {
       $('#page-loading-overlay').show();
