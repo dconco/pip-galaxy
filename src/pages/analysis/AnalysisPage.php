@@ -14,5 +14,4 @@ return (new Component(fn() => <<<HTML
    <FooterComponent />
 HTML))
    ->route('/analysis')
-   ->title('Market Analysis | Pip Galaxy')
-   ->styleSheet(require 'assets/styles/AnalysisStyle.php');
+   ->title('Market Analysis | Pip Galaxy');

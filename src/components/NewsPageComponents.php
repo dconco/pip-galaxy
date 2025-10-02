@@ -97,7 +97,7 @@ class NewsPageComponents
                         imageUrl="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
                         timeAgo="1 hour ago" 
                         author="Maria" 
-                        link="/article/view/1234"
+                        link="/analysis/view/1234"
                         authorImage="https://randomuser.me/api/portraits/women/28.jpg" />
 
                      <!-- News Grid -->
@@ -109,7 +109,7 @@ class NewsPageComponents
                            summary="The SEC pushed back its deadlines for decisions on Bitcoin ETF proposals from BlackRock, Fidelity, and other asset managers." 
                            imageUrl="https://images.unsplash.com/photo-1622630998477-942890a5f3df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
                            timeAgo="3 hours ago" 
-                           link="/article/view/1" />
+                           link="/analysis/view/1" />
 
                         <!-- News 2 -->
                         <NewsPageComponents::NewsCard 
@@ -118,7 +118,7 @@ class NewsPageComponents
                            summary="Gold prices surged as investors sought safe-haven assets following recent banking sector instability and concerns over economic growth." 
                            imageUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
                            timeAgo="5 hours ago" 
-                           link="/article/view/2" />
+                           link="/analysis/view/2" />
 
                         <!-- News 3 -->
                         <NewsPageComponents::NewsCard 
@@ -127,7 +127,7 @@ class NewsPageComponents
                            summary="The Japanese yen weakened to its lowest level in over two decades against the US dollar after the Bank of Japan maintained its ultra-loose monetary policy." 
                            imageUrl="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
                            timeAgo="7 hours ago" 
-                           link="/article/view/3" />
+                           link="/analysis/view/3" />
 
                         <!-- News 4 -->
                         <NewsPageComponents::NewsCard 
@@ -136,7 +136,7 @@ class NewsPageComponents
                            summary="Technology stocks surged, driving a broader market rally, as investors focused on growth opportunities in artificial intelligence and cloud computing sectors." 
                            imageUrl="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
                            timeAgo="9 hours ago" 
-                           link="/article/view/4" />
+                           link="/analysis/view/4" />
                      </div>
 
                      <!-- Load More Button -->
@@ -152,7 +152,7 @@ class NewsPageComponents
                            <h3 class="font-bold text-xl flex items-center">
                               <i class="fas fa-calendar-alt text-indigo-600 mr-2"></i>
                               Upcoming Economic Events
-                           </h3>
+                           </h3> 
                            <a href="#" class="text-indigo-600 hover:underline text-sm">View Full Calendar →</a>
                         </div>
 

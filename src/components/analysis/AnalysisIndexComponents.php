@@ -19,7 +19,8 @@ class AnalysisIndexComponents
                            title="USD Outlook: Fed Rate Decision Could Break EUR/USD Out of Range"
                            description="The EUR/USD has been trading in a tight range ahead of this week's FOMC meeting. We analyze key levels that could break depending on whether the Fed signals more hikes or a pause."
                            author="Jessica"
-                           timeAgo="2 hours ago" />
+                           timeAgo="2 hours ago"
+                           link="/analysis/view/forex" />
 
                      <!-- Filter Tabs -->
                      <div class="flex border-b border-gray-200 mb-6">
@@ -32,40 +33,44 @@ class AnalysisIndexComponents
                      <!-- Article Grid -->
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Article 1 -->
-                        <AnalysisIndexComponents::ArticleCard id="1" image="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        <AnalysisIndexComponents::ArticleCard image="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                               category="Commodities"
                               title="Gold Price Analysis: XAU/USD Eyes Key Support at $1,850"
                               excerpt="Gold prices test critical support levels amid a stronger dollar and rising bond yields - we analyze potential scenarios ahead."
                               author="James"
                               views="3.2k"
-                              timeAgo="5 hours ago" />
+                              timeAgo="5 hours ago"
+                              link="/analysis/view/commodities" />
 
                         <!-- Article 2 -->
-                        <AnalysisIndexComponents::ArticleCard id="2" image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        <AnalysisIndexComponents::ArticleCard image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                               category="Crypto"
                               title="Bitcoin Technical Analysis: BTC/USD Eyes $30,000 Support"
                               excerpt="Bitcoin consolidates near $31,000 as traders await key economic data - we break down the technicals and potential catalysts."
                               author="Michael"
                               views="2.5k"
-                              timeAgo="8 hours ago" />
+                              timeAgo="8 hours ago"
+                              link="/analysis/view/crypto" />
 
                         <!-- Article 3 -->
-                        <AnalysisIndexComponents::ArticleCard id="3" image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        <AnalysisIndexComponents::ArticleCard image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                               category="Forex"
                               title="EUR/USD Technical Analysis: Euro Struggles Below 1.1000"
                               excerpt="The EUR/USD pair faces resistance near 1.1000 as the dollar strengthens ahead of the FOMC meeting - we analyze key levels to watch."
                               author="Sarah"
                               views="4.1k"
-                              timeAgo="1 day ago" />
+                              timeAgo="1 day ago"
+                              link="/analysis/view/forex" />
 
                         <!-- Article 4 -->
-                        <AnalysisIndexComponents::ArticleCard id="4" image="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        <AnalysisIndexComponents::ArticleCard image="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                               category="Trading Psychology"
                               title="Mastering Trading Psychology: Tips for Staying Disciplined"
                               excerpt="Successful trading requires more than just strategy - we explore key psychological principles to help you stay disciplined and focused."
                               author="Emily"
                               views="1.8k"
-                              timeAgo="2 days ago" />
+                              timeAgo="2 days ago"
+                              link="/analysis/view/trading-psychology" />
                      </div>
 
                      <AnalysisIndexComponents::Pagination />
@@ -186,7 +191,7 @@ class AnalysisIndexComponents
 
 
 
-   public function FeaturedArticle($image, $category, $title, $description, $author, $timeAgo)
+   public function FeaturedArticle($image, $category, $title, $description, $author, $timeAgo, $link)
    {
       return <<<HTML
          <div class="bg-white rounded-lg overflow-hidden shadow-md mb-8">
@@ -206,7 +211,7 @@ class AnalysisIndexComponents
                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Author" class="w-8 h-8 rounded-full mr-2">
                      <span class="text-sm font-medium">By {$author}</span>
                   </div>
-                  <Component.Link class="inline-block mt-4 text-indigo-600 font-medium hover:underline">Read Full Analysis →</Component.Link>
+                  <Component.Link to="{$link}" class="inline-block mt-4 text-indigo-600 font-medium hover:underline">Read Full Analysis →</Component.Link>
                </div>
             </div>
          </div>
@@ -216,10 +221,10 @@ class AnalysisIndexComponents
 
 
 
-   public function ArticleCard($id, $image, $category, $title, $excerpt, $author, $views, $timeAgo)
+   public function ArticleCard($image, $category, $title, $excerpt, $author, $views, $timeAgo, $link)
    {
       return <<<HTML
-         <Component.Link href="/article/view/{$id}" class="no-underline text-inherit">
+         <Component.Link to="{$link}">
             <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer">
                <img src="{$image}" alt="Gold Analysis" class="w-full h-48 object-cover">
                <div class="p-6">

@@ -85,7 +85,7 @@ class HomePageComponents
                            </div>
                         </div>
                      </div>
-                     <a href="/analysis/category/crypto.html" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                     <a href="/analysis/category/crypto" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
                         Explore Crypto <i class="fas fa-arrow-right ml-2"></i>
                      </a>
                   </div>
@@ -264,104 +264,98 @@ class HomePageComponents
 
                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <!-- Article 1 -->
-                  <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 card-hover">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Gold Chart Analysis" class="w-full h-56 object-cover">
-                        <div class="absolute top-4 left-4">
-                           <span class="bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Technical Analysis</span>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
-                           <span class="text-gray-600 text-xs font-medium">6 hours ago</span>
-                        </div>
-                     </div>
-                     <div class="p-6">
-                        <h3 class="font-bold text-xl mb-3 leading-tight hover:text-indigo-600 transition-colors">Gold (XAU/USD) Testing Support Turned Resistance Zone</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">After breaking below its long-term triangle support, gold seems to be going for a retest of the area of interest.</p>
-                        <div class="flex items-center justify-between">
-                           <div class="flex items-center">
-                              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="w-10 h-10 rounded-full mr-3">
-                              <div>
-                                 <div class="text-sm font-semibold">Niko Peterson</div>
-                                 <div class="text-xs text-gray-500">Senior Analyst</div>
-                              </div>
-                           </div>
-                           <div class="flex items-center text-gray-400">
-                              <i class="fas fa-eye mr-1"></i>
-                              <span class="text-xs">2.1k views</span>
-                           </div>
-                        </div>
-                     </div>
-                  </article>
+                  <HomePageComponents::ArticleCard
+                     image="https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                     title="Gold (XAU/USD) Testing Support Turned Resistance Zone"
+                     summary="After breaking below its long-term triangle support, gold seems to be going for a retest of the area of interest."
+                     authorImage="https://randomuser.me/api/portraits/men/32.jpg"
+                     authorName="Niko Peterson"
+                     authorRole="Senior Analyst"
+                     views="2.1k"
+                     category="Technical Analysis"
+                     categoryColor="indigo-600"
+                     timeAgo="6 hours ago"
+                     link="/analysis/view/1"
+                  />
 
                   <!-- Article 2 -->
-                  <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 card-hover">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="GBP/NZD Chart" class="w-full h-56 object-cover">
-                        <div class="absolute top-4 left-4">
-                           <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Forex Analysis</span>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
-                           <span class="text-gray-600 text-xs font-medium">6 hours ago</span>
-                        </div>
-                     </div>
-                     <div class="p-6">
-                        <h3 class="font-bold text-xl mb-3 leading-tight hover:text-indigo-600 transition-colors">GBP/NZD Resistance and NZD/CAD Support If NZ Jobs Data Beats Estimates</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Key levels to watch as New Zealand employment data could spark volatility in NZD pairs.</p>
-                        <div class="flex items-center justify-between">
-                           <div class="flex items-center">
-                              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="w-10 h-10 rounded-full mr-3">
-                              <div>
-                                 <div class="text-sm font-semibold">Sarah Williams</div>
-                                 <div class="text-xs text-gray-500">Forex Strategist</div>
-                              </div>
-                           </div>
-                           <div class="flex items-center text-gray-400">
-                              <i class="fas fa-eye mr-1"></i>
-                              <span class="text-xs">1.8k views</span>
-                           </div>
-                        </div>
-                     </div>
-                  </article>
+                  <HomePageComponents::ArticleCard
+                     image="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                     title="Bitcoin Eyes \$50,000 as Market Sentiment Improves"
+                     summary="After a strong rebound from the \$42,000 level, Bitcoin is showing signs of further upside potential."
+                     authorImage="https://randomuser.me/api/portraits/women/28.jpg"
+                     authorName="Emily Clark"
+                     authorRole="Crypto Analyst"
+                     views="1.5k"
+                     category="Cryptocurrency"
+                     categoryColor="purple-600"
+                     timeAgo="2 hours ago"
+                     link="/analysis/view/2"
+                  />
 
                   <!-- Article 3 -->
-                  <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 card-hover">
-                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Trading Psychology" class="w-full h-56 object-cover">
-                        <div class="absolute top-4 left-4">
-                           <span class="bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Psychology</span>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
-                           <span class="text-gray-600 text-xs font-medium">3 days ago</span>
-                        </div>
-                     </div>
-                     <div class="p-6">
-                        <h3 class="font-bold text-xl mb-3 leading-tight hover:text-indigo-600 transition-colors">3 Tips to Help You Trade Larger Positions</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">How to scale up your trading size without letting emotions affect your decisions.</p>
-                        <div class="flex items-center justify-between">
-                           <div class="flex items-center">
-                              <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Author" class="w-10 h-10 rounded-full mr-3">
-                              <div>
-                                 <div class="text-sm font-semibold">Mark Johnson</div>
-                                 <div class="text-xs text-gray-500">Trading Coach</div>
-                              </div>
-                           </div>
-                           <div class="flex items-center text-gray-400">
-                              <i class="fas fa-eye mr-1"></i>
-                              <span class="text-xs">3.2k views</span>
-                           </div>
-                        </div>
-                     </div>
-                  </article>
+                  <HomePageComponents::ArticleCard
+                     image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                     title="EUR/USD Set to Break Key Resistance Ahead of ECB Meeting"
+                     summary="The Euro has been consolidating near key resistance levels as traders await the ECB's interest rate decision."
+                     authorImage="https://randomuser.me/api/portraits/men/45.jpg"
+                     authorName="Michael Smith"
+                     authorRole="Forex Analyst"
+                     views="2.8k"
+                     category="Forex"
+                     categoryColor="blue-600"
+                     timeAgo="1 day ago"
+                     link="/analysis/view/3"
+                  />
                </div>
 
                <!-- Mobile View All Button -->
                <div class="mt-8 text-center md:hidden">
-                  <a href="analysis/list.html" class="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                  <a href="/analysis" class="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
                      View All Articles <i class="fas fa-arrow-right ml-2"></i>
                   </a>
                </div>
             </div>
          </section>
+      HTML;
+   }
+
+
+
+
+
+   public function ArticleCard($image, $title, $summary, $authorName, $authorRole, $authorImage, $views, $timeAgo, $category, $categoryColor, $link) {
+      return <<<HTML
+         <Component.Link to="{$link}" class="cursor-pointer">
+            <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 card-hover">
+               <div class="relative">
+                  <img src="{$image}" alt="Gold Chart Analysis" class="w-full h-56 object-cover">
+                  <div class="absolute top-4 left-4">
+                     <span class="bg-{$categoryColor} text-white text-xs font-semibold px-3 py-1 rounded-full">{$category}</span>
+                  </div>
+                  <div class="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
+                     <span class="text-gray-600 text-xs font-medium">{$timeAgo}</span>
+                  </div>
+               </div>
+               <div class="p-6">
+                  <h3 class="font-bold text-xl mb-3 leading-tight hover:text-indigo-600 transition-colors">{$title}</h3>
+                  <p class="text-gray-600 mb-4 leading-relaxed">{$summary}</p>
+                  <div class="flex items-center justify-between">
+                     <div class="flex items-center">
+                        <img src="{$authorImage}" alt="Author" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                           <div class="text-sm font-semibold">{$authorName}</div>
+                           <div class="text-xs text-gray-500">{$authorRole}</div>
+                        </div>
+                     </div>
+                     <div class="flex items-center text-gray-400">
+                        <i class="fas fa-eye mr-1"></i>
+                        <span class="text-xs">{$views} views</span>
+                     </div>
+                  </div>
+               </div>
+            </article>
+         </Component.Link>
       HTML;
    }
 
@@ -457,7 +451,7 @@ class HomePageComponents
 
                <!-- Additional CTA -->
                <div class="text-center mt-12">
-                  <a href="tools/index.html" class="inline-flex items-center bg-white text-indigo-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-lg">
+                  <a href="/tools" class="inline-flex items-center bg-white text-indigo-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-lg">
                      <i class="fas fa-tools mr-3"></i>
                      Explore All Tools
                      <i class="fas fa-arrow-right ml-3"></i>

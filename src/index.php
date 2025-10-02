@@ -6,8 +6,12 @@ use phpSPA\App;
    ->attach(require 'pages/HomePage.php')
    ->attach(require 'pages/NewsPage.php')
    ->attach(require 'pages/learn/LearnPage.php')
-   ->attach(require 'pages/analysis/AnalysisPage.php')
 
+   /** Analysis Pages */
+   ->attach(require 'pages/analysis/AnalysisPage.php')
+   ->attach(require 'pages/analysis/ViewAnalysisPage.php')
+
+   /** Global Assets */
    ->script(require 'assets/scripts/GlobalScript.php')
    ->styleSheet(require 'assets/styles/MainStyle.php')
    ->defaultTargetID('app')
