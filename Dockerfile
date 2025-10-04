@@ -1,41 +1,35 @@
-FROM composer:2 AS vendor
+# Stage 1: Build with Node for assets
+FROM node:18 AS node-build
+
 WORKDIR /app
-COPY composer.json composer.lock ./
+RUN npm install -g pnpm
+
+# Clone your repo
+RUN git clone https://github.com/dconco/pip-galaxy.git .
+RUN pnpm install
+RUN pnpm build
+
+# Stage 2: PHP with Composer
+FROM composer:2 AS composer-build
+
+WORKDIR /app
+RUN git clone https://github.com/dconco/pip-galaxy.git .
 RUN composer install --no-dev --optimize-autoloader
 
-# Stage 2: Node dependencies & Tailwind build (pnpm)
-FROM node:20 AS frontend
-WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN npm install -g pnpm && pnpm install
-COPY . . 
-RUN pnpm build   # builds Tailwind into public/
+# Stage 3: Final runtime using PHP
+FROM php:8.2-cli
 
-# Stage 3: Runtime (Apache + PHP)
-FROM php:8.3-apache
+WORKDIR /var/www/html
+COPY --from=node-build /app /var/www/html
+COPY --from=composer-build /app/vendor /var/www/html/vendor
 
-# Enable Apache rewrite for SPA / Laravel-style routing
-RUN a2enmod rewrite
-
-# Set environment for PHP app
 ENV APP_ENV=production
 
-# Workdir
-WORKDIR /var/www
+# create production environment file
+RUN echo "APP_ENV=production" > .env.production \
+ && echo "APP_DEBUG=false" >> .env.production \
+ && echo "APP_KEY=SomeRandom32CharKeyHere" >> .env.production
 
-# Copy PHP vendor deps
-COPY --from=vendor /app/vendor ./vendor
+EXPOSE 8000
 
-# Copy PHP source code and configs
-COPY src ./src
-COPY composer.json composer.lock ./
-
-# Copy built frontend assets (public folder after pnpm build)
-COPY --from=frontend /app/public ./public
-
-# Apache should serve public/
-WORKDIR /var/www/html
-RUN rm -rf /var/www/html && ln -s /var/www/public /var/www/html
-
-# Expose Apache port
-EXPOSE 80
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "public"]
