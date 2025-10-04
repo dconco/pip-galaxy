@@ -26,6 +26,7 @@ COPY --from=composer-build /app/vendor /var/www/html/vendor
 ENV APP_ENV=production
 
 # create production environment file
+RUN echo "APP_ENV=production" >> .env
 RUN echo "APP_ENV=production" >> .env.production
 
 EXPOSE 8000
