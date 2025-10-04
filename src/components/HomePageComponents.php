@@ -46,9 +46,9 @@ class HomePageComponents
                            <div class="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full" style="width: 85%"></div>
                         </div>
                      </div>
-                     <a href="/analysis/category/forex.html" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                     <Component.Link to="/analysis/category/forex" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
                         View Forex Analysis <i class="fas fa-arrow-right ml-2"></i>
-                     </a>
+                     </Component.Link>
                   </div>
 
                   <!-- Crypto Market Snapshot -->
@@ -85,9 +85,9 @@ class HomePageComponents
                            </div>
                         </div>
                      </div>
-                     <a href="/analysis/category/crypto" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                     <Component.Link to="/analysis/category/crypto" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
                         Explore Crypto <i class="fas fa-arrow-right ml-2"></i>
-                     </a>
+                     </Component.Link>
                   </div>
 
                   <!-- Top Gainers/Losers -->
@@ -131,9 +131,9 @@ class HomePageComponents
                            </div>
                         </div>
                      </div>
-                     <a href="analysis/list.html" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                     <Component.Link to="/analysis" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
                         View All Markets <i class="fas fa-arrow-right ml-2"></i>
-                     </a>
+                     </Component.Link>
                   </div>
 
                   <!-- Economic Calendar -->
@@ -177,9 +177,9 @@ class HomePageComponents
                            </div>
                         </div>
                      </div>
-                     <a href="tools/index.html" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                     <Component.Link to="/tools" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
                         Full Calendar <i class="fas fa-arrow-right ml-2"></i>
-                     </a>
+                     </Component.Link>
                   </div>
                </div>
             </div>
@@ -234,7 +234,7 @@ class HomePageComponents
                               <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Testimonial" class="w-12 h-12 rounded-full mr-4">
                               <div class="text-left">
                                  <div class="text-white font-semibold">Alex Chen</div>
-                                 <div class="text-blue-200 text-sm">Professional Trader, Singapore</div>
+                                 <div class="text-blue-50 text-sm">Professional Trader, Singapore</div>
                               </div>
                         </div>
                      </div>
@@ -257,7 +257,7 @@ class HomePageComponents
                      <h2 class="text-4xl font-bold mb-2">Latest Market Analysis</h2>
                      <p class="text-xl text-gray-600">Expert insights and trading strategies updated daily</p>
                   </div>
-                  <a href="analysis/list.html" class="hidden md:inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                  <a href="/analysis" class="hidden md:inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
                      View All Articles <i class="fas fa-arrow-right ml-2"></i>
                   </a>
                </div>
@@ -388,9 +388,9 @@ class HomePageComponents
                            <span>$10.00/pip</span>
                         </div>
                      </div>
-                     <a href="tools/index.html" class="inline-flex items-center text-white font-semibold hover:text-blue-300 transition-colors">
+                     <Component.Link to="/tools/#pip-calculator" class="inline-flex items-center text-white font-semibold hover:text-blue-300 transition-colors">
                         Try Calculator <i class="fas fa-arrow-right ml-2"></i>
-                     </a>
+                     </Component.Link>
                   </div>
 
                   <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 card-hover">
@@ -405,9 +405,9 @@ class HomePageComponents
                            <span>0.5 lots</span>
                         </div>
                      </div>
-                     <a href="tools/index.html" class="inline-flex items-center text-white font-semibold hover:text-green-300 transition-colors">
+                     <Component.Link to="/tools/#position-size" class="inline-flex items-center text-white font-semibold hover:text-green-300 transition-colors">
                         Calculate Size <i class="fas fa-arrow-right ml-2"></i>
-                     </a>
+                     </Component.Link>
                   </div>
 
                   <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 card-hover">
@@ -426,9 +426,9 @@ class HomePageComponents
                            <span class="text-yellow-300">OPENING</span>
                         </div>
                      </div>
-                     <a href="tools/index.html" class="inline-flex items-center text-white font-semibold hover:text-yellow-300 transition-colors">
+                     <Component.Link to="/tools/#forex-hours" class="inline-flex items-center text-white font-semibold hover:text-yellow-300 transition-colors">
                         View Sessions <i class="fas fa-arrow-right ml-2"></i>
-                     </a>
+                     </Component.Link>
                   </div>
 
                   <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl hover:bg-opacity-20 transition-all duration-300 card-hover">
@@ -443,9 +443,9 @@ class HomePageComponents
                            <span class="text-green-300">+0.85</span>
                         </div>
                      </div>
-                     <a href="tools/index.html" class="inline-flex items-center text-white font-semibold hover:text-purple-300 transition-colors">
+                     <Component.Link to="/tools/#correlation" class="inline-flex items-center text-white font-semibold hover:text-purple-300 transition-colors">
                         View Correlations <i class="fas fa-arrow-right ml-2"></i>
-                     </a>
+                     </Component.Link>
                   </div>
                </div>
 

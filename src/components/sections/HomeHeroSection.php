@@ -41,15 +41,15 @@ class HomeHeroSection {
                      </div>
 
                      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                        <a href="learn/index.html" class="bg-white text-indigo-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105 shadow-lg">
+                        <Component.Link to="/learn" class="bg-white text-indigo-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105 shadow-lg">
                            <i class="fas fa-graduation-cap mr-2"></i>Start Learning
-                        </a>
-                        <a href="tools/index.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105">
+                        </Component.Link>
+                        <Component.Link to="/tools" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105">
                            <i class="fas fa-tools mr-2"></i>Market Tools
-                        </a>
-                        <a href="/analysis/index.html" class="bg-indigo-800 bg-opacity-50 hover:bg-opacity-70 border-2 border-indigo-400 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105">
+                        </Component.Link>
+                        <Component.Link to="/analysis" class="bg-indigo-800 bg-opacity-50 hover:bg-opacity-70 border-2 border-indigo-400 px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105">
                            <i class="fas fa-chart-area mr-2"></i>Latest Analysis
-                        </a>
+                        </Component.Link>
                      </div>
 
                      <!-- Trust Indicators -->

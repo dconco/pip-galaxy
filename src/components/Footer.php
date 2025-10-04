@@ -38,7 +38,6 @@ class FooterComponent
                            <li><Component.Link to="/analysis/category/crypto" children="Crypto Analysis" class="text-gray-400 hover:text-white" /></li>
                            <li><Component.Link to="/analysis/category/forex" children="Forex Analysis" class="text-gray-400 hover:text-white" /></li>
                            <li><Component.Link to="/tools" children="Economic Calendar" class="text-gray-400 hover:text-white" /></li>
-                           <li><Component.Link to="/learn/glossary" children="Glossary" class="text-gray-400 hover:text-white" /></li>
                      </ul>
                   </div>
 

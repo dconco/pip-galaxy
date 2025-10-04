@@ -99,31 +99,31 @@ class AnalysisIndexComponents
                   <h4 class="font-medium mb-3 text-gray-700">Categories</h4>
                   <ul class="space-y-2">
                      <li>
-                     <Component.Link class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
+                     <Component.Link to="/analysis" class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
                         <span>All Analysis</span>
                         <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-0.5 rounded">128</span>
                      </Component.Link>
                      </li>
                      <li>
-                        <Component.Link class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
+                        <Component.Link to="/analysis/category/forex" class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
                            <span>Forex</span>
                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-0.5 rounded">64</span>
                         </Component.Link>
                      </li>
                      <li>
-                        <Component.Link class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
+                        <Component.Link to="/analysis/category/crypto" class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
                            <span>Crypto</span>
                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-0.5 rounded">32</span>
                         </Component.Link>
                      </li>
                      <li>
-                        <Component.Link class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
+                        <Component.Link to="/analysis/category/commodities" class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
                            <span>Commodities</span>
                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-0.5 rounded">18</span>
                         </Component.Link>
                      </li>
                      <li>
-                        <Component.Link class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
+                        <Component.Link to="/analysis/category/trading-psychology" class="flex items-center justify-between text-gray-600 hover:text-indigo-600">
                            <span>Trading Psychology</span>
                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-0.5 rounded">14</span>
                         </Component.Link>
@@ -148,15 +148,15 @@ class AnalysisIndexComponents
                <div>
                   <h4 class="font-medium mb-3 text-gray-700">Featured Tools</h4>
                   <div class="space-y-3">
-                     <Component.Link class="flex items-center text-indigo-600 hover:text-indigo-800">
+                     <Component.Link to="/tools/#pip-calculator" class="flex items-center text-indigo-600 hover:text-indigo-800">
                         <i class="fas fa-calculator mr-2"></i>
                         <span>Pip Calculator</span>
                      </Component.Link>
-                     <Component.Link class="flex items-center text-indigo-600 hover:text-indigo-800">
+                     <Component.Link to="/tools/#chart-pie" class="flex items-center text-indigo-600 hover:text-indigo-800">
                         <i class="fas fa-chart-pie mr-2"></i>
                         <span>Position Sizer</span>
                      </Component.Link>
-                     <Component.Link class="flex items-center text-indigo-600 hover:text-indigo-800">
+                     <Component.Link to="/tools/#market-hours" class="flex items-center text-indigo-600 hover:text-indigo-800">
                         <i class="fas fa-clock mr-2"></i>
                         <span>Market Hours</span>
                      </Component.Link>

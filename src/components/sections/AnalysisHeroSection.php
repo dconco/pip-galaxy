@@ -1,6 +1,7 @@
 <?php
 
 require_once 'components/Header.php';
+require_once 'components/BreadcrumbComponent.php';
 
 class AnalysisHeroSection
 {

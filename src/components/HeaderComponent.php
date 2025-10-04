@@ -7,7 +7,7 @@ class HeaderComponent
       $active = fn($page) => $page === $active
          ? 'text-indigo-600 bg-indigo-50 px-4 rounded-lg font-medium'
          : 'hover:text-indigo-600 hover:bg-indigo-50 px-4 rounded-lg font-medium transition-all duration-300';
-
+      
       return <<<HTML
          <!-- Modern Header integrated with content -->
          <header class="bg-white bg-opacity-90 backdrop-blur-md text-gray-800 shadow-lg sticky top-0 z-50">
