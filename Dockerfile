@@ -17,7 +17,7 @@ RUN git clone https://github.com/dconco/pip-galaxy.git .
 RUN composer install --no-dev --optimize-autoloader
 
 # Stage 3: Final runtime using PHP
-FROM php:8.2-cli
+FROM php:8.3-cli
 
 WORKDIR /var/www/html
 COPY --from=node-build /app /var/www/html

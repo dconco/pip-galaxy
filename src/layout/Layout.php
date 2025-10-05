@@ -10,6 +10,8 @@ return fn() => <<<HTML
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
+      <link rel="apple-touch-icon" href="/images/icon.png">
    </head>
    <body>
       <!-- Page Loading Overlay -->
